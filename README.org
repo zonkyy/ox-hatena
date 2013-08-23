@@ -1,0 +1,38 @@
+#+TITLE: ox-hatena README
+
+* 概要
+  org 文書をはてな記法に変換する elisp です．
+
+* 必要なもの
+  - Org 8.0 (7.x ではたぶん動きません)
+
+* インストール
+  ox-hatena をダウンロードしてください．
+
+  : git clone http://github.com/akisute3/ox-hatena.git
+
+  ox-hatena ディレクトリをロードパスに加えて，以下のコードを .emacs に記述すればインストール完了です．
+
+  : (require 'ox-hatena)
+
+* 使い方
+  org-mode で C-c C-e を入力した画面に "Export to Hatena Notation" というコマンドが追加されます．
+  コマンドは以下のとおりです．
+
+  - C-x C-e b B :: バッファに出力 (org-hatena-export-as-hatena)
+  - C-x C-e b b :: ファイルに出力 (org-hatena-export-to-hatena)
+  - C-x C-e b o :: ファイルに出力して開く
+
+* 対応書式
+  - 見出し記法，カテゴリー記法
+  - 小見出し記法，小々見出し記法
+  - リスト記法
+  - 表組み記法
+  - 引用記法
+  - スーパーpre記法，シンタックス・ハイライト
+  - 脚注記法
+  - http記法
+
+  これらの記法を完全にサポートできているわけではありません．
+
+  それぞれ org-mode のどの記法と対応しているかは，ox-hatena/sample のファイルを参照してください．
