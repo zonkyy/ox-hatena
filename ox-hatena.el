@@ -55,10 +55,7 @@
   '(?b "Export to Hatena Notation"
        ((?B "As Hatena Notation buffer" org-hatena-export-as-hatena)
         (?b "As Hatena Notation file" org-hatena-export-to-hatena)
-        (?o "As Hatena Notation file and open"
-            (lambda (a s v b)
-              (if a (org-hatena-export-to-hatena t s v b)
-                (org-open-file (org-hatena-export-to-hatena nil s v b))))))))
+        (?o "As Hatena Notation file and open" org-hatena-export-to-hatena-and-open))))
 
 
 ;;; Internal Variables
@@ -203,6 +200,10 @@
              'hatena ,outfile ,subtreep ,visible-only ,body-only ',ext-plist)))
       (org-export-to-file
        'hatena outfile subtreep visible-only body-only ext-plist))))
+
+(defun org-hatena-export-to-hatena-and-open (async subtreep visible-only body-only)
+  (if async (org-hatena-export-to-hatena t subtreep visible-only body-only)
+    (org-open-file (org-hatena-export-to-hatena nil subtreep visible-only body-only))))
 
 
 
