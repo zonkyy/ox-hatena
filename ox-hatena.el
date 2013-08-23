@@ -54,7 +54,7 @@
   :menu-entry
   '(?b "Export to Hatena Notation"
        ((?B "As Hatena Notation buffer" org-hatena-export-as-hatena)
-        (?b "As Hatena Notation file" org-latex-export-to-hatena)
+        (?b "As Hatena Notation file" org-hatena-export-to-hatena)
         (?o "As Hatena Notation file and open"
             (lambda (a s v b)
               (if a (org-hatena-export-to-hatena t s v b)
@@ -173,7 +173,7 @@
 
 ;;; End-user functions
 
-(defun org-hatena-export-as-natena (&optional async subtreep visible-only body-only ext-plist)
+(defun org-hatena-export-as-hatena (&optional async subtreep visible-only body-only ext-plist)
   (interactive)
   (if async
       (org-export-async-start
